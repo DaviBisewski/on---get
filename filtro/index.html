@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    function filtraLista() {
+        const filtro = document.getElementById("filtro").value;
+        const lis = document.getElementsByTagName("li");
+
+        for (const li of lis) {
+            if (li.innerText.toLowerCase().startsWith(filtro)) {
+                li.style.fontWeight = 'bold';
+            }
+            if (filtro == ""){
+            li.style.fontWeight = 'normal';
+            }
+        }
+    }
+    
+</script>
+
+<body>
+    <form>
+        <label for="">Filtro:</label>
+        <input type="text" id="filtro" oninput="filtraLista()">
+    </form>
+    <ul>
+        <li>Mortadelo</li>
+        <li>Tilápio</li>
+        <li>Linguiço</li>
+        <li>Danono</li>
+        <li>Cerejo</li>
+        <li>Lesmo</li>
+        <li>Pindamonhangabo</li>
+    </ul>
+</body>
+
+</html>
